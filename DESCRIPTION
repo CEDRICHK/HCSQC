@@ -7,9 +7,22 @@ Description: Purpose multiple measures of control quality to validate a HCS proj
   and a Strictly standardized mean difference (SSMD) for all selected positive or negative controls.
 License: MIT + file LICENSE
 Imports: 
+    attempt,
     config (>= 0.3.1),
+    dplyr,
+    DT,
+    ggplot2,
+    glue,
     golem (>= 0.3.1),
-    shiny (>= 1.6.0)
+    htmltools,
+    processx,
+    shiny (>= 1.6.0),
+    shinythemes
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Language: en-US
