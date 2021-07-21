@@ -3,14 +3,27 @@
 #' @param request Internal parameter for `{shiny}`. 
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @import shinythemes
+#' @import dplyr
+#' @import ggplot2
 #' @noRd
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic 
-    fluidPage(
-      h1("HCSQC")
+    bootstrapPage(
+      tags$head(includeHTML("gtag.html")),
+      navbarPage(
+        theme = shinytheme("flatly"),
+        collapsible = TRUE,
+        HTML(
+          '<a style="text-decoration:none;cursor:default;color:#FFFFFF;" class="active" href="#">Quality Control</a>'
+        ),
+        id = "nav",
+        windowTitle = "Quality control for high-throughput screening",
+        mod_raw_data_ui("raw_data_ui_1")
+      )
     )
   )
 }
